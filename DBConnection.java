@@ -4,15 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/ambsys";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/ambulance_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "your_password";
+    private static final String PASSWORD = "rootamirmehnaz123";
 
     public static Connection getConnection() {
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Database connection failed!");
             return null;
         }
     }
