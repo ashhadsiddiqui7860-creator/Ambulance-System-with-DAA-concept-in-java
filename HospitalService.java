@@ -11,20 +11,23 @@ public class HospitalService {
     public void addHospital() {
         System.out.print("Enter Hospital Name: ");
         String name = sc.nextLine();
+
         System.out.print("Enter Location: ");
         String location = sc.nextLine();
+
         hospitals.add(new Hospital(name, location));
-        System.out.println(" Hospital added successfully.");
+        System.out.println("Hospital added successfully.");
     }
 
     public void viewHospitals() {
         if (hospitals.isEmpty()) {
-            System.out.println("️ No hospitals found.");
+            System.out.println("No hospitals found.");
             return;
         }
-        System.out.println(" List of Hospitals:");
+
+        System.out.println("List of Hospitals:");
         for (Hospital h : hospitals) {
-            System.out.println("- " + h.name + " at " + h.location);
+            System.out.println("- " + h.getName() + " at " + h.getLocation());
         }
     }
 
