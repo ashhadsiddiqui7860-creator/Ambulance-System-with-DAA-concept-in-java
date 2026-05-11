@@ -2,7 +2,8 @@ package ambsys;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main 
+{
     static Scanner sc = new Scanner(System.in);
     static Graph cityGraph = new Graph();
     static HospitalService hospitalService = new HospitalService();
@@ -11,11 +12,13 @@ public class Main {
     static DispatchService dispatchService =
             new DispatchService(cityGraph, ambulanceService);
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         preloadCityMap();
         int choice;
 
-        do {
+        do 
+        {
             System.out.println("\n--- AmbuRoute Menu ---");
             System.out.println("1. Add Hospital");
             System.out.println("2. Add Ambulance");
@@ -28,7 +31,8 @@ public class Main {
             choice = sc.nextInt();
             sc.nextLine(); // clear buffer
 
-            switch (choice) {
+            switch (choice)
+            {
                 case 1 -> hospitalService.addHospital();
                 case 2 -> ambulanceService.addAmbulance();
                 case 3 -> hospitalService.viewHospitals();
@@ -40,7 +44,8 @@ public class Main {
         } while (choice != 6);
     }
 
-    public static void preloadCityMap() {
+    public static void preloadCityMap() 
+    {
         cityGraph.addEdge("A", "B", 4);
         cityGraph.addEdge("A", "C", 2);
         cityGraph.addEdge("B", "D", 5);
