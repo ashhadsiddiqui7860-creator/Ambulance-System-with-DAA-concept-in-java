@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnection {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/ambulance_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "rootamirmehnaz123";
+    private static final String PASSWORD = "root123";
 
     public static Connection getConnection() {
         try {
