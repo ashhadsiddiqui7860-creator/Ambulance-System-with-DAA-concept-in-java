@@ -3,18 +3,23 @@ package ambsys;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConnection {
+public class DBConnection 
+{
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/ambulance_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "root123";
+    private static final String PASSWORD = "rootamirmehnaz123";
 
-    public static Connection getConnection() {
-        try {
+    public static Connection getConnection() 
+    {
+        try 
+            {
             Class.forName("com.mysql.cj.jdbc.Driver"); 
             return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (Exception e) {
-            System.out.println("Database connection failed!");
-            return null;
-        }
+            } 
+            catch (Exception e) 
+            {
+                System.out.println("Database connection failed!");
+                return null;
+            }
     }
 }
