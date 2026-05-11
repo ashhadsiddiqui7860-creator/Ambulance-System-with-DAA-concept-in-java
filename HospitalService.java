@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class HospitalService {
+public class HospitalService 
+{
     private List<Hospital> hospitals = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
 
-    public void addHospital() {
+    public void addHospital() 
+    {
         System.out.print("Enter Hospital Name: ");
         String name = sc.nextLine();
 
@@ -19,19 +21,23 @@ public class HospitalService {
         System.out.println("Hospital added successfully.");
     }
 
-    public void viewHospitals() {
-        if (hospitals.isEmpty()) {
+    public void viewHospitals() 
+    {
+        if (hospitals.isEmpty()) 
+        {
             System.out.println("No hospitals found.");
             return;
         }
 
         System.out.println("List of Hospitals:");
-        for (Hospital h : hospitals) {
+        for (Hospital h : hospitals) 
+        {
             System.out.println("- " + h.getName() + " at " + h.getLocation());
         }
     }
 
-    public List<Hospital> getHospitals() {
+    public List<Hospital> getHospitals() 
+    {
         return hospitals;
     }
 }
